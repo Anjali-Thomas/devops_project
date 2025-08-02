@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitOps Django App</title>
+</head>
+<body>
+    <h1>Item List</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="item" placeholder="Enter item" required>
+        <button type="submit">Add Item</button>
+    </form>
+    <ul>
+        {% for item in items %}
+        <li>{{ item.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
